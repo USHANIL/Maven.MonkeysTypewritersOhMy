@@ -50,12 +50,24 @@ public class MonkeyTypewriter {
             monkey3.join();
             monkey4.join();
             monkey5.join();
-            Thread.sleep(1000);
+            Thread.sleep(10);
         } catch(InterruptedException e) {
             System.out.println("MAIN INTERRUPTED");
         }
         // Print out the copied versions here.
 
         System.out.println(safe.copied);  //change it safe or unsafe as per what you want to test
+
+        if(pageMatcher(safe.copied,introduction)) {
+            System.out.println("It Matches!");
+        }else{
+            System.out.println("Content does not match with original");
+        }
     }
+
+    public static Boolean pageMatcher(String copy, String original) {
+        return copy.equals(original);
+    }
+
+
 }

@@ -30,9 +30,9 @@ public class SafeCopier extends Copier{
                     String holder = stringIterator.next() + " ";
                     //Thread.sleep(1000);
                     Thread.sleep(randomSleep);
-                   // System.out.println(Thread.currentThread().getName());
+                    System.out.println(Thread.currentThread().getName());
                     copied += holder;
-                    System.out.println(Thread.currentThread().getName() + " " + stringIterator.next());
+                   // System.out.println(Thread.currentThread().getName() + " " + stringIterator.next());
 
                 }
             }
@@ -41,7 +41,7 @@ public class SafeCopier extends Copier{
             }
         }
 
-
+        copied = copied.trim();
 
     }
 
