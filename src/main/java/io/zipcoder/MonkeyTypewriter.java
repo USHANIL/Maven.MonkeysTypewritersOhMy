@@ -33,6 +33,23 @@ public class MonkeyTypewriter {
             System.out.println("MAIN INTERRUPTED");
         }
 
+        UnsafeCopier unsafe = new UnsafeCopier(introduction);
+      //  SafeCopier safe = new SafeCopier(introduction);
+
+        //instantiate all the threads first and then start it otherwise first thread will complete your task
+        Thread monkey1 = new Thread(unsafe);
+        Thread monkey2 = new Thread(unsafe);
+       // Thread monkey2 = new Thread(new UnsafeCopier()); //dont do it this way
+        Thread monkey3 = new Thread(unsafe);
+        Thread monkey4 = new Thread(unsafe);
+        Thread monkey5 = new Thread(unsafe);
+        monkey1.start();
+        monkey2.start();
+        monkey3.start();
+        monkey4.start();
+        monkey5.start();
+
+
         // Print out the copied versions here.
     }
 }
